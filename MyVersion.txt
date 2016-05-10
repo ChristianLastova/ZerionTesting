@@ -1,0 +1,25 @@
+//Start browser
+Start
+goTo.homepage
+login("cnl4fh@virginia.edu","1formPassword!")
+End
+test(username = "cnl4fh@virginia.edu")
+test(profileID = "459532")
+
+//Go to user tab and create user
+click.adminUsers
+click.new
+fill.userName("MyNewUsername")
+fill.firstName("Keith")
+fill.lastName("Keith")
+fill.email("Keith")
+fill.initialPW("Keith!123Garber")
+fill.initialPWConfirm("Keith!123Garber")
+check.createForms(true)
+check.companyAdmin(false)
+click.createUser
+
+//confirm user was created
+fill.searchbar("MyNewUsername")
+check.correspondingCheckbox
+testExists(Username = "MyNewUsername")
